@@ -44,30 +44,15 @@ KO: ([6,5,8],[3,2,1])
 ## 🛠️ Compilation
 Le projet se compile via un **Makefile** avec les règles :
 ```bash
-make        # compile
-make clean  # supprime les fichiers temporaires
-make fclean # supprime les binaires
+make
+make clean
+make fclean 
 ```
-
-> Outil de build libre — `stack` recommandé.
 
 ---
 
 ## 💡 Bonus
-En bonus, vous pouvez implémenter un vrai **push_swap** en Haskell (le générateur d’opérations).
-
----
-
-## 📁 Structure conseillée
-```
-.
-├── Makefile
-├── src/
-│   └── Main.hs
-├── bonus/
-│   └── ...
-└── README.md
-```
+Bubble sort en haskell
 
 ---
 
