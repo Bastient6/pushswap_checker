@@ -58,3 +58,13 @@ Bubble sort en haskell
 
 ## 👨‍💻 Auteur
 Projet **RUSH 1 - pushswap_checker**  
+
+👥 Équipe
+
+    Thomas Janiaut
+
+    Corentin Albertus
+
+    Bastien Tiffy
+
+Merci à l’équipe pédagogique d’EPITECH pour leur accompagnement tout au long de ce projet
