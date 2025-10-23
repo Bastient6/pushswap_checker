@@ -1,0 +1,60 @@
+Test suite test: RUNNING...
+Cases: 65  Tried: 0  Errors: 0  Failures: 0Cases: 65  Tried: 1  Errors: 0  Failures: 0Cases: 65  Tried: 2  Errors: 0  Failures: 0Cases: 65  Tried: 3  Errors: 0  Failures: 0Cases: 65  Tried: 4  Errors: 0  Failures: 0Cases: 65  Tried: 5  Errors: 0  Failures: 0Cases: 65  Tried: 6  Errors: 0  Failures: 0Cases: 65  Tried: 7  Errors: 0  Failures: 0Cases: 65  Tried: 8  Errors: 0  Failures: 0Cases: 65  Tried: 9  Errors: 0  Failures: 0Cases: 65  Tried: 10  Errors: 0  Failures: 0Cases: 65  Tried: 11  Errors: 0  Failures: 0Cases: 65  Tried: 12  Errors: 0  Failures: 0Cases: 65  Tried: 13  Errors: 0  Failures: 0Cases: 65  Tried: 14  Errors: 0  Failures: 0Cases: 65  Tried: 15  Errors: 0  Failures: 0Cases: 65  Tried: 16  Errors: 0  Failures: 0Cases: 65  Tried: 17  Errors: 0  Failures: 0Cases: 65  Tried: 18  Errors: 0  Failures: 0Cases: 65  Tried: 19  Errors: 0  Failures: 0Cases: 65  Tried: 20  Errors: 0  Failures: 0Cases: 65  Tried: 21  Errors: 0  Failures: 0Cases: 65  Tried: 22  Errors: 0  Failures: 0Cases: 65  Tried: 23  Errors: 0  Failures: 0Cases: 65  Tried: 24  Errors: 0  Failures: 0Cases: 65  Tried: 25  Errors: 0  Failures: 0Cases: 65  Tried: 26  Errors: 0  Failures: 0Cases: 65  Tried: 27  Errors: 0  Failures: 0Cases: 65  Tried: 28  Errors: 0  Failures: 0                                            ### Failure in: 28:Test 29
+test/Spec.hs:103
+test29
+expected: ([2,1],[3])
+ but got: ([1,2],[3])
+Cases: 65  Tried: 29  Errors: 0  Failures: 1Cases: 65  Tried: 30  Errors: 0  Failures: 1                                            ### Failure in: 30:Test 31
+test/Spec.hs:109
+test31
+expected: ([3,2],[1])
+ but got: ([2,1,3],[3])
+Cases: 65  Tried: 31  Errors: 0  Failures: 2Cases: 65  Tried: 32  Errors: 0  Failures: 2Cases: 65  Tried: 33  Errors: 0  Failures: 2Cases: 65  Tried: 34  Errors: 0  Failures: 2Cases: 65  Tried: 35  Errors: 0  Failures: 2Cases: 65  Tried: 36  Errors: 0  Failures: 2Cases: 65  Tried: 37  Errors: 0  Failures: 2Cases: 65  Tried: 38  Errors: 0  Failures: 2Cases: 65  Tried: 39  Errors: 0  Failures: 2                                            ### Failure in: 39:Test 40
+test/Spec.hs:136
+test40
+expected: ([],[2,3,1])
+ but got: ([],[1,2,3])
+Cases: 65  Tried: 40  Errors: 0  Failures: 3                                            ### Failure in: 40:Test 41
+test/Spec.hs:139
+test41
+expected: ([1],[2,3])
+ but got: ([1],[3,2])
+Cases: 65  Tried: 41  Errors: 0  Failures: 4Cases: 65  Tried: 42  Errors: 0  Failures: 4                                            ### Failure in: 42:Test 43
+test/Spec.hs:145
+test43
+expected: ([1],[3,2])
+ but got: ([1],[2,3])
+Cases: 65  Tried: 43  Errors: 0  Failures: 5                                            ### Failure in: 43:Test 44
+test/Spec.hs:148
+test44
+expected: ([3,1],[2])
+ but got: ([2,3,1],[1])
+Cases: 65  Tried: 44  Errors: 0  Failures: 6                                            ### Failure in: 44:Test 45
+test/Spec.hs:151
+test45
+expected: ([1,3,2],[])
+ but got: ([3,1,2],[])
+Cases: 65  Tried: 45  Errors: 0  Failures: 7Cases: 65  Tried: 46  Errors: 0  Failures: 7Cases: 65  Tried: 47  Errors: 0  Failures: 7                                            ### Error in:   47:Test 48
+test/Swap.hs:(11,1)-(12,32): Non-exhaustive patterns in function swap
+
+Cases: 65  Tried: 48  Errors: 1  Failures: 7Cases: 65  Tried: 49  Errors: 1  Failures: 7Cases: 65  Tried: 50  Errors: 1  Failures: 7Cases: 65  Tried: 51  Errors: 1  Failures: 7Cases: 65  Tried: 52  Errors: 1  Failures: 7Cases: 65  Tried: 53  Errors: 1  Failures: 7Cases: 65  Tried: 54  Errors: 1  Failures: 7Cases: 65  Tried: 55  Errors: 1  Failures: 7Cases: 65  Tried: 56  Errors: 1  Failures: 7Cases: 65  Tried: 57  Errors: 1  Failures: 7Cases: 65  Tried: 58  Errors: 1  Failures: 7Cases: 65  Tried: 59  Errors: 1  Failures: 7Cases: 65  Tried: 60  Errors: 1  Failures: 7Cases: 65  Tried: 61  Errors: 1  Failures: 7Cases: 65  Tried: 62  Errors: 1  Failures: 7                                            ### Failure in: 62:Test 63
+test/Spec.hs:205
+test63
+expected: True
+ but got: False
+Cases: 65  Tried: 63  Errors: 1  Failures: 8                                            ### Failure in: 63:Test 64
+test/Spec.hs:208
+test64
+expected: True
+ but got: False
+Cases: 65  Tried: 64  Errors: 1  Failures: 9                                            ### Failure in: 64:Test 65
+test/Spec.hs:211
+test65
+expected: True
+ but got: False
+Cases: 65  Tried: 65  Errors: 1  Failures: 10
+OK
+KO: ([2,1,3,4,5,6,7,8],[])
+Tests exécutés avec succès!
+Test suite test: PASS
+Test suite logged to: /home/bastien/delivery2/tech2/haskell/rush/B-PDG-300-MPL-3-1-PDGRUSH1-thomas.janiaut/tests/dist-newstyle/build/x86_64-linux/ghc-9.0.2/myhaskellproject-0.1.0.0/test/myhaskellproject-0.1.0.0-test.log

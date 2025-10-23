@@ -1,0 +1,88 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<style type="text/css">
+span.lineno { color: white; background: #aaaaaa; border-right: solid white 12px }
+span.nottickedoff { background: yellow}
+span.istickedoff { background: white }
+span.tickonlyfalse { margin: -1px; border: 1px solid #f20913; background: #f20913 }
+span.tickonlytrue  { margin: -1px; border: 1px solid #60de51; background: #60de51 }
+span.funcount { font-size: small; color: orange; z-index: 2; position: absolute; right: 20 }
+span.decl { font-weight: bold }
+span.spaces    { background: white }
+</style>
+</head>
+<body>
+<pre>
+<span class="decl"><span class="nottickedoff">never executed</span> <span class="tickonlytrue">always true</span> <span class="tickonlyfalse">always false</span></span>
+</pre>
+<pre>
+<span class="lineno">    1 </span>{-
+<span class="lineno">    2 </span>-- EPITECH PROJECT, 2024
+<span class="lineno">    3 </span>-- Main.hs
+<span class="lineno">    4 </span>-- File description:
+<span class="lineno">    5 </span>-- Rush
+<span class="lineno">    6 </span>-}
+<span class="lineno">    7 </span>
+<span class="lineno">    8 </span>module PushSwapChecker where
+<span class="lineno">    9 </span>import System.Environment
+<span class="lineno">   10 </span>import System.Exit ( exitWith, ExitCode(ExitFailure), exitFailure )
+<span class="lineno">   11 </span>import Data.ByteString (split, packCString)
+<span class="lineno">   12 </span>import Data.Text ( Text, splitOn, pack, unpack )
+<span class="lineno">   13 </span>import Data.Char (isDigit)
+<span class="lineno">   14 </span>import Data.Bifunctor
+<span class="lineno">   15 </span>import Swap
+<span class="lineno">   16 </span>import Push
+<span class="lineno">   17 </span>import Rotation
+<span class="lineno">   18 </span>import Checker
+<span class="lineno">   19 </span>
+<span class="lineno">   20 </span>strToArray :: String -&gt; String -&gt; [String]
+<span class="lineno">   21 </span><span class="decl"><span class="istickedoff">strToArray str c = map unpack (splitOn (pack c) (pack str))</span></span>
+<span class="lineno">   22 </span>
+<span class="lineno">   23 </span>strToInt :: [String] -&gt; [Int]
+<span class="lineno">   24 </span><span class="decl"><span class="istickedoff">strToInt = fmap read</span></span>
+<span class="lineno">   25 </span>
+<span class="lineno">   26 </span>execInstruction :: [Char] -&gt; ([a], [a]) -&gt; ([a], [a])
+<span class="lineno">   27 </span><span class="decl"><span class="istickedoff">execInstruction &quot;sa&quot; tulpe = first swap tulpe</span>
+<span class="lineno">   28 </span><span class="spaces"></span><span class="istickedoff">execInstruction &quot;sb&quot; tulpe = second swap tulpe</span>
+<span class="lineno">   29 </span><span class="spaces"></span><span class="istickedoff">execInstruction &quot;sc&quot; tulpe = sc tulpe</span>
+<span class="lineno">   30 </span><span class="spaces"></span><span class="istickedoff">execInstruction &quot;pa&quot; tulpe = pa tulpe</span>
+<span class="lineno">   31 </span><span class="spaces"></span><span class="istickedoff">execInstruction &quot;pb&quot; tulpe = pb tulpe</span>
+<span class="lineno">   32 </span><span class="spaces"></span><span class="istickedoff">execInstruction &quot;ra&quot; tulpe = first rf tulpe</span>
+<span class="lineno">   33 </span><span class="spaces"></span><span class="istickedoff">execInstruction &quot;rb&quot; tulpe = second rf tulpe</span>
+<span class="lineno">   34 </span><span class="spaces"></span><span class="istickedoff">execInstruction &quot;rr&quot; tulpe = rr tulpe</span>
+<span class="lineno">   35 </span><span class="spaces"></span><span class="istickedoff">execInstruction &quot;rra&quot; tulpe = first rl tulpe</span>
+<span class="lineno">   36 </span><span class="spaces"></span><span class="istickedoff">execInstruction &quot;rrb&quot; tulpe = second rl tulpe</span>
+<span class="lineno">   37 </span><span class="spaces"></span><span class="istickedoff">execInstruction &quot;rrr&quot; tulpe = rrr tulpe</span>
+<span class="lineno">   38 </span><span class="spaces"></span><span class="istickedoff">execInstruction _ t = t</span></span>
+<span class="lineno">   39 </span>
+<span class="lineno">   40 </span>execSwap :: [String] -&gt; ([a], [a]) -&gt; ([a], [a])
+<span class="lineno">   41 </span><span class="decl"><span class="istickedoff">execSwap sx a = foldl (flip execInstruction) a sx</span></span>
+<span class="lineno">   42 </span>
+<span class="lineno">   43 </span>isValidNum :: [String] -&gt; Bool
+<span class="lineno">   44 </span><span class="decl"><span class="istickedoff">isValidNum [] = False</span>
+<span class="lineno">   45 </span><span class="spaces"></span><span class="istickedoff">isValidNum str = all isValidSingleNumber str</span></span>
+<span class="lineno">   46 </span>
+<span class="lineno">   47 </span>isValidSingleNumber :: String -&gt; Bool
+<span class="lineno">   48 </span><span class="decl"><span class="istickedoff">isValidSingleNumber ('-':cs) = all isDigit cs</span>
+<span class="lineno">   49 </span><span class="spaces"></span><span class="istickedoff">isValidSingleNumber (c:cs) = all isDigit (c:cs)</span>
+<span class="lineno">   50 </span><span class="spaces"></span><span class="istickedoff">isValidSingleNumber _ = False</span></span>
+<span class="lineno">   51 </span>
+<span class="lineno">   52 </span>isValStr :: [String] -&gt; Bool
+<span class="lineno">   53 </span><span class="decl"><span class="istickedoff">isValStr [] = True</span>
+<span class="lineno">   54 </span><span class="spaces"></span><span class="istickedoff">isValStr (&quot;sa&quot;:sx) = isValStr sx</span>
+<span class="lineno">   55 </span><span class="spaces"></span><span class="istickedoff">isValStr (&quot;sb&quot;:sx) = isValStr sx</span>
+<span class="lineno">   56 </span><span class="spaces"></span><span class="istickedoff">isValStr (&quot;sc&quot;:sx) = isValStr sx</span>
+<span class="lineno">   57 </span><span class="spaces"></span><span class="istickedoff">isValStr (&quot;pa&quot;:sx) = isValStr sx</span>
+<span class="lineno">   58 </span><span class="spaces"></span><span class="istickedoff">isValStr (&quot;pb&quot;:sx) = isValStr sx</span>
+<span class="lineno">   59 </span><span class="spaces"></span><span class="istickedoff">isValStr (&quot;ra&quot;:sx) = isValStr sx</span>
+<span class="lineno">   60 </span><span class="spaces"></span><span class="istickedoff">isValStr (&quot;rb&quot;:sx) = isValStr sx</span>
+<span class="lineno">   61 </span><span class="spaces"></span><span class="istickedoff">isValStr (&quot;rr&quot;:sx) = isValStr sx</span>
+<span class="lineno">   62 </span><span class="spaces"></span><span class="istickedoff">isValStr (&quot;rra&quot;:sx) = isValStr sx</span>
+<span class="lineno">   63 </span><span class="spaces"></span><span class="istickedoff">isValStr (&quot;rrb&quot;:sx) = isValStr sx</span>
+<span class="lineno">   64 </span><span class="spaces"></span><span class="istickedoff">isValStr (&quot;rrr&quot;:sx) = isValStr sx</span>
+<span class="lineno">   65 </span><span class="spaces"></span><span class="istickedoff">isValStr (_:sx) = False</span></span>
+
+</pre>
+</body>
+</html>
